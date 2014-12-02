@@ -1,0 +1,13 @@
+- Tap UI
+	- Round tap button
+	- BPM numerical display
+	- BPM graphical display
+	- Metronome reset
+	- Mute
+- Audio for click
+- Mobile slide in nav
+- Settings
+	- Color scheme
+	- Time signature
+	- Accented down beat
+- Easter egg?
