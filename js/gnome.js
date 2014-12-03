@@ -1,4 +1,4 @@
-function tempo(current, previous, avg, saved) {
+function tempoTiming(current, previous, avg, saved) {
     this.currentTap = current;
     this.previousTap = previous;
     this.avgBPM = avg;
@@ -31,7 +31,7 @@ function tempo(current, previous, avg, saved) {
     };
 }
 $(document).ready(function() {
-    var metronome = new tempo(0, 0, 0, new Array(10));
+    var metronome = new tempoTiming(0, 0, 0, new Array(10));
     $("button#tap").click(function() {
         metronome.currentTap = Date.now();
         if (metronome.previousTap == 0) {
