@@ -96,6 +96,51 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; }
 ::-moz-selection { background: #16a085; color: #fff; text-shadow: none; }
 ::selection      { background: #16a085; color: #fff; text-shadow: none; }
 
+/* ==============================
+    METRONOME: Tap interface
+   ============================== */
+
+.metronome {
+	max-width: 200px;
+	line-height: 0;
+}
+
+.button-round {
+	width: 100%;
+	height: 100%;
+    border-radius: 50%;
+	border: none;
+    overflow: hidden;
+    outline: none;
+    background: #e67e22; 
+    box-shadow: 0 0 3px gray;
+
+    -webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	transition: all 0.1s;
+}
+
+.button-round:active {
+	background:#d35400;
+}
+
+.button-round span {
+	display: block;
+	float: left;
+	width: 100%;
+	padding-top: 50%;
+    padding-bottom: 50%;
+	line-height: 1em;
+	margin-top: -1.8rem;
+	text-align: center;
+	color: #e2eaf3;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+	bottom: -0.9rem;
+}
+
 /* ==============
     MOBILE: Menu
    ============== */
@@ -129,10 +174,6 @@ nav a:hover{
 	padding:30px 0;
 }
 
-#main .metronome h1{
-	font-size:2em;
-}
-
 #main aside{
 	color:white;
 	padding:0px 5% 10px;
@@ -143,14 +184,7 @@ nav a:hover{
 	padding:20px 0;
 }
 
-.metronome {
-	padding-bottom: 30px;
-}
 
-.metronome button {
-	width: 100%;
-	height: 16rem;
-}
 
 /* ===============
     ALL: IE Fixes

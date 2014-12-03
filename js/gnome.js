@@ -1,11 +1,9 @@
-$(document).ready(function() {
-    function tempo(current, previous, avg, saved) {
-        this.currentTap = current;
-        this.previousTap = previous;
-        this.avgBPM = avg;
-        this.savedBPMs = saved;
-    }
-    tempo.prototype.cleanArray = function(actual){
+function tempo(current, previous, avg, saved) {
+    this.currentTap = current;
+    this.previousTap = previous;
+    this.avgBPM = avg;
+    this.savedBPMs = saved;
+    this.cleanArray = function(actual) {
         var newArray = new Array();
         for(var i = 0; i<actual.length; i++){
             if (actual[i]){
@@ -14,25 +12,26 @@ $(document).ready(function() {
       }
       return newArray;
     };
-    tempo.prototype.appendDropLast = function(newValue, valueSet) {
+    this.appendDropLast = function(newValue, valueSet) {
         valueSet.pop();
         valueSet.unshift(newValue);
         return valueSet;
     };
-    tempo.prototype.averageArr = function(arr) {
+    this.averageArr = function(arr) {
         arr = this.cleanArray(arr);
         var sum = arr.reduce(function(a, b) { return a + b });
         var avg = sum / arr.length;
         return Math.round(avg);
     };
-    tempo.prototype.calculateBPM = function(previous, recent) {
+    this.calculateBPM = function(previous, recent) {
+        var bpm = Math.max(Math.min(Math.round(600 / (recent - previous) * 100), 240), 40);
         console.log('Received times ' + previous + ' & ' + recent);
-        console.log('Calculated BPM to be ' + 60000 / (recent - previous));
-        return Math.round(600 / (recent - previous) * 100);
+        console.log('Calculated BPM to be ' + bpm + ' (range restricted between 40-240)');
+        return bpm;
     };
-
+}
+$(document).ready(function() {
     var metronome = new tempo(0, 0, 0, new Array(10));
-
     $("button#tap").click(function() {
         metronome.currentTap = Date.now();
         if (metronome.previousTap == 0) {
@@ -44,6 +43,7 @@ $(document).ready(function() {
             metronome.avgBPM = metronome.averageArr(metronome.savedBPMs);
             console.log('Stored BPMs are ' + metronome.savedBPMs);
             console.log('New BPM calculated to be ' + metronome.avgBPM);
+            $("button#tap span").text(metronome.avgBPM);
             metronome.previousTap = metronome.currentTap;
         }
     });

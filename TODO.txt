@@ -3,7 +3,8 @@
 	- BPM numerical display
 	- BPM graphical display
 	- Metronome reset
-	- Mute
+	- Mute switch
+	- Touch friendly (jQuery Mobile)
 - Audio for click
 - Mobile slide in nav
 - Settings
@@ -11,3 +12,4 @@
 	- Time signature
 	- Accented down beat
 - Easter egg?
+- Chrome plugin for wider distribution?
