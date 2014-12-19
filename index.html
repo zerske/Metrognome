@@ -6,27 +6,28 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
 	<title>Metrognome</title>
 	<meta name="description" content="An HTML5 metronome with support for mobile devices">
 	<meta name="author" content="Alexander Kindzerske">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+
 
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
 
+	<script src="js/libs/modernizr-2.0.6.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-	<script src="js/libs/jquery.ui.touch-punch.min.js"></script>
-	<script src="js/libs/modernizr-2.0.6.min.js"></script>
-	<script src="js/gnome.js"></script>
 
+
+	<script src="js/gnome.js"></script>
 </head>
-<body style="background:blue;">
-	<div id="flashlayer">
-	
-	</div>
+<body>
+
 	<div id="tempo-button">
 		<button class="tempobutton" id="tap">tap</button>
 	</div>
+	
+	<div id="baton"></div>
 </body>
 </html>

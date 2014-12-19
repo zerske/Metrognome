@@ -1,6 +1,41 @@
 body {
 	margin: 0;
 }
+/* Different classes to represent the color of the BPM */
+.bpmColor50 {
+	background-color: rgb(5,5,233);
+}
+.bpmColor60 {
+	background-color: rgb(5,96,233);
+}
+.bpmColor70 {
+	background-color: rgb(5,187,233);
+}
+.bpmColor80 {
+	background-color: rgb(5,233,187);
+}
+.bpmColor90 {
+	background-color: rgb(5,233,96);
+}
+.bpmColor100 {
+	background-color: rgb(5,233,5);
+}
+.bpmColor110 {
+	background-color: rgb(96,233,5);
+}
+.bpmColor120 {
+	background-color: rgb(187,233,5);
+}
+.bpmColor130 {
+	background-color: rgb(233,187,5);
+}
+.bpmColor140 {
+	background-color: rgb(233,96,5);
+}
+.bpmColor150 {
+	background-color: rgb(233,5,5);
+}
+
 .tempobutton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -68,27 +103,60 @@ textarea:focus, input:focus{
 	left: 50%;
 }
 
-#flashlayer {
-	height: 100vh;
-	width: 100%;
+
+#baton {
+	background-color: white;
+	z-index: -1;
+	
+	position:absolute;
+	margin: 0 0 0 -20px;
+	top: 2%;
+	left: 50%;
+	height: 210vh;
+	width: 40px;
+	
+	-webkit-backface-visibility: hidden;
 }
 
-@-webkit-keyframes pulse-beat {
-	0% {
-		background-color:white;
-		opacity:1;
-	}
-	60% {
-		opacity:0.5;
-	}
-	100% {
-		opacity:0;
-	}
-}
 
-.pulse-beat {
-	-webkit-animation-name: pulse-beat;
-	-webkit-animation-duration: 220ms;
+.spinbatton-right {
+	animation-name: spin-right;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	
+	-webkit-animation-name: spin-right;
 	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-fill-mode: forwards;
+	
+	-moz-animation-name: spin-right;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: ease-in-out;
+	-moz-animation-fill-mode: forwards;
 }
+
+.spinbatton-left {
+	animation-name: spin-left;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	
+	-webkit-animation-name: spin-left;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-fill-mode: forwards;
+	
+	-moz-animation-name: spin-left;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: ease-in-out;
+	-moz-animation-fill-mode: forwards;
+}
+
+@-moz-keyframes spin-right { 0% { -moz-transform: rotate(-50deg); transform:rotate(-50deg); } 100% { -moz-transform: rotate(50deg); transform:rotate(50deg); } }
+@-webkit-keyframes spin-right { 0% { -webkit-transform: rotate(-0deg); transform:rotate(-50deg); } 100% { -webkit-transform: rotate(50deg); transform:rotate(50deg); } }
+@keyframes spin-right { 0% { -webkit-transform: rotate(-50deg); transform:rotate(-50deg); } 100% { -webkit-transform: rotate(50deg); transform:rotate(50deg); } }
+
+@-moz-keyframes spin-left { 0% { -moz-transform: rotate(50deg); transform:rotate(50deg); } 100% { -moz-transform: rotate(-50deg); transform:rotate(-50deg); } }
+@-webkit-keyframes spin-left { 0% { -webkit-transform: rotate(50deg); transform:rotate(50deg); } 100% { -webkit-transform: rotate(-50deg); transform:rotate(-50deg); } }
+@keyframes spin-left { 0% { -webkit-transform: rotate(50deg); transform:rotate(50deg); } 100% { -webkit-transform: rotate(-50deg); transform:rotate(-50deg); } }

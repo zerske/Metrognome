@@ -13,3 +13,10 @@
 	- Accented down beat
 - Easter egg?
 - Chrome plugin for wider distribution?
+
+-Figure out 10 grades of bg colors.
+-Remove javascript calc of bg color
+-Create 10 classes
+-Assign them based on tempo
+-Remove flashing div
+-Add baton which oscillates to tempo
